@@ -12,6 +12,10 @@ class ListNode {
         this.key = key;
         this.val = val;
     }
+
+    ListNode(int val) {
+        this.val = val;
+    }
 }
 
 public class LRUCache {
