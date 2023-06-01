@@ -10,6 +10,14 @@ object test {
 
     val myRanges = spark.range(100).toDF()
 
+    val part1 = spark.sparkContext.textFile("/opt/bitnami/spark/README.md", 6)
+    part1.partitions
+    for (tok <- part1) {
+      print(tok)
+    }
+
+    part1.dependencies
+
     myRanges.show()
 
     print(myRanges.count())
